@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Account Sign In</title>
+  <style>
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f3f5f7;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .login-box {
+      width: 360px;
+      background: white;
+      padding: 32px;
+      border-radius: 10px;
+      box-shadow: 0 4px 20px rgba(0,0,0,.12);
+    }
+
+    .logo {
+      width: 52px;
+      height: 52px;
+      background: #1877f2;
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 28px;
+      font-weight: bold;
+      margin: 0 auto 20px;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 25px;
+    }
+
+    input {
+      width: 100%;
+      padding: 13px;
+      margin-bottom: 14px;
+      border: 1px solid #ccd0d5;
+      border-radius: 6px;
+      font-size: 15px;
+    }
+
+    button {
+      width: 100%;
+      padding: 13px;
+      border: 0;
+      border-radius: 6px;
+      background: #1877f2;
+      color: white;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .forgot {
+      display: block;
+      text-align: center;
+      margin-top: 18px;
+      color: #1877f2;
+      font-size: 14px;
+    }
+
+    #result {
+      display: none;
+      text-align: center;
+      line-height: 1.5;
+    }
+
+    .warning {
+      margin-top: 15px;
+      padding: 12px;
+      background: #fff3cd;
+      border-radius: 6px;
+      font-size: 13px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="login-box" id="login">
+    <div class="logo">f</div>
+
+    <h2>Sign in to your account</h2>
+
+    <form id="form">
+      <input type="text" placeholder="Email or username" required>
+      <input type="password" placeholder="Password" required>
+
+      <button type="submit">Log In</button>
+    </form>
+
+    <a class="forgot">Forgot password?</a>
+
+    <div class="warning">
+      you need to login your credentials before we continue.
+    </div>
+  </div>
+
+  <div class="login-box" id="result">
+    <h2>SYSTEM/PAGE ERORR</h2>
+    <p>
+      There seems to be an error connecting to our server.
+    </p>
+    <p><strong>Please use the facebook app to continue</strong></p>
+  </div>
+
+  <script>
+    document.getElementById("form").addEventListener("submit", function(e) {
+      e.preventDefault();
+
+      // Deliberately do NOT collect, save, or transmit credentials.
+      document.getElementById("login").style.display = "none";
+      document.getElementById("result").style.display = "block";
+    });
+  </script>
+</body>
+</html>
